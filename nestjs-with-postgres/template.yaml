@@ -23,9 +23,9 @@ spec:
           title: Repo Owner
           type: string
           description: GitLab Organization
-          default: development
+          default: deepaked1
           enum:
-            - development
+            - deepaked1
         description:
           title: Description
           type: string
