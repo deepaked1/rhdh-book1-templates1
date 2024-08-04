@@ -15,5 +15,5 @@ spec:
   port:
     targetPort: http-listener
   tls:
-    insecureEdgeTerminationPolicy: Redirect
+    insecureEdgeTerminationPolicy: Allow
     termination: edge

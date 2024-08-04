@@ -11,6 +11,7 @@ build-job:
     ENTITY_NAMESPACE: 'default'
     ENTITY_KIND: 'Component'
     ENTITY_NAME: ${{values.component_id}}
+    GIT_SSL_NO_VERIFY: true
   image: quay.io/redhat-gpte/techdocs-cli
   stage: build
   script:

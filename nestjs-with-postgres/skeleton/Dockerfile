@@ -3,6 +3,7 @@ COPY --chown=1001:0 package.json package-lock.json ./
 RUN npm ci
 COPY --chown=1001:0 . .
 ENV NODE_ENV production
+ENV NODE_TLS_REJECT_UNAUTHORIZED 0
 RUN npm run build
 
 FROM --platform=linux/amd64 registry.access.redhat.com/ubi8/nodejs-18

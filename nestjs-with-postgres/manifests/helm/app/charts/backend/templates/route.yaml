@@ -13,7 +13,7 @@ spec:
   path: {{ .path }}
   {{- end }}
   tls:
-    insecureEdgeTerminationPolicy: Redirect
+    insecureEdgeTerminationPolicy: Allow
     termination: edge
   port:
     targetPort: {{ $.Values.service.port }}
