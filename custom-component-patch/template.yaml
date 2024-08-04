@@ -79,7 +79,7 @@ spec:
       each: ${{ parameters.gitlabRepos }}
       action: fetch:plain
       input:
-        url: https://gitlab-gitlab${{ parameters.clusterId }}/${{ parameters.gitlabGroup }}/${{ each.value }}
+        url: https://gitlab.${{ parameters.clusterId }}/${{ parameters.gitlabGroup }}/${{ each.value }}
         targetPath: ./${{ each.value }}    
     - id: patch-content
       name: Patch repo(s)
@@ -114,7 +114,7 @@ spec:
       each: ${{ parameters.gitlabRepos }}
       action: publish:gitlab:merge-request
       input: 
-        repoUrl: gitlab-gitlab${{ parameters.clusterId }}?repo=${{ each.value }}&owner=${{ parameters.gitlabGroup }}
+        repoUrl: gitlab.${{ parameters.clusterId }}?repo=${{ each.value }}&owner=${{ parameters.gitlabGroup }}
         title: custom patches for quarkus component
         description: custom patches for quarkus component
         branchName: ${{ parameters.gitlabBranch }}

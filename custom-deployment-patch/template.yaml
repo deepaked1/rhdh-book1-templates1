@@ -55,11 +55,11 @@ spec:
         url: ./manifests
         targetPath: ./patch-gitops
         values:
-          git_host: gitlab-gitlab${{parameters.clusterId}}
+          git_host: gitlab.${{parameters.clusterId}}
           component_id: ${{parameters.namespace}}-${{parameters.applicationId}}
           description: ${{parameters.description}}
-          destination: https://gitlab-gitlab${{ parameters.clusterId }}/${{ parameters.gitlabGroup }}/${{ parameters.namespace }}-${{ parameters.applicationId }}-gitops.git
-          source_repository: https://gitlab-gitlab${{parameters.clusterId}}/${{parameters.gitlabGroup}}/${{parameters.namespace}}-${{parameters.applicationId}}.git
+          destination: https://gitlab.${{ parameters.clusterId }}/${{ parameters.gitlabGroup }}/${{ parameters.namespace }}-${{ parameters.applicationId }}-gitops.git
+          source_repository: https://gitlab.${{parameters.clusterId}}/${{parameters.gitlabGroup}}/${{parameters.namespace}}-${{parameters.applicationId}}.git
           repository_name: ${{parameters.namespace}}-${{parameters.applicationId}}-gitops
           gitlabGroup: ${{parameters.gitlabGroup}}
           git_owner: ${{parameters.gitlabGroup}}
@@ -77,7 +77,7 @@ spec:
       name: Open merge request 1
       action: publish:gitlab:merge-request
       input: 
-        repoUrl: gitlab-gitlab${{ parameters.clusterId }}?repo=${{ parameters.namespace }}-${{ parameters.applicationId }}-gitops&owner=${{ parameters.gitlabGroup }}
+        repoUrl: gitlab.${{ parameters.clusterId }}?repo=${{ parameters.namespace }}-${{ parameters.applicationId }}-gitops&owner=${{ parameters.gitlabGroup }}
         title: new files for staged deployment
         description: custom templated gitops patch
         branchName: ${{ parameters.gitlabBranch }}-create
@@ -95,7 +95,7 @@ spec:
       name: Open merge request 2
       action: publish:gitlab:merge-request
       input: 
-        repoUrl: gitlab-gitlab${{ parameters.clusterId }}?repo=${{ parameters.namespace }}-${{ parameters.applicationId }}-gitops&owner=${{ parameters.gitlabGroup }}
+        repoUrl: gitlab.${{ parameters.clusterId }}?repo=${{ parameters.namespace }}-${{ parameters.applicationId }}-gitops&owner=${{ parameters.gitlabGroup }}
         title: updated files for staged deployment
         description: custom templated gitops patch
         branchName: ${{ parameters.gitlabBranch }}-update
@@ -113,7 +113,7 @@ spec:
       name: Open merge request 3
       action: publish:gitlab:merge-request
       input: 
-        repoUrl: gitlab-gitlab${{ parameters.clusterId }}?repo=${{ parameters.namespace }}-${{ parameters.applicationId }}-gitops&owner=${{ parameters.gitlabGroup }}
+        repoUrl: gitlab.${{ parameters.clusterId }}?repo=${{ parameters.namespace }}-${{ parameters.applicationId }}-gitops&owner=${{ parameters.gitlabGroup }}
         title: deleted files for staged deployment
         description: custom templated gitops patch
         branchName: ${{ parameters.gitlabBranch }}-delete
