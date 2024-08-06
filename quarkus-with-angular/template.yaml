@@ -23,9 +23,9 @@ spec:
           title: Repo Owner
           type: string
           description: GitLab Organization
-          default: development
+          default: deepaked1
           enum:
-            - development
+            - deepaked1
         description:
           title: Description
           type: string
@@ -42,7 +42,7 @@ spec:
           title: Cluster Id
           type: string
           description: Id of the cluster
-          default: <XXX_XXX_XXX>
+          default: devops-dev1-a01ee4194ed985a1e32b1d96fd4ae346-0000.us-east.containers.appdomain.cloud
         namespace: 
           title: Namespace
           type: string
@@ -149,7 +149,7 @@ spec:
       action: argocd:create-resources
       input:
         appName: ${{parameters.namespace}}-${{parameters.application_id}}-bootstrap
-        argoInstance: main
+        argoInstance: argoInstance1
         namespace: janus-argocd
         repoUrl: https://gitlab.${{parameters.cluster_id}}/${{parameters.gitlabGroup}}/${{parameters.namespace}}-${{parameters.application_id}}-gitops.git
         path: 'argocd/'
