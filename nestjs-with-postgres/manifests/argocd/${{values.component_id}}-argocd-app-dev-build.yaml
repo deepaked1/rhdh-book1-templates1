@@ -6,6 +6,8 @@ metadata:
   namespace: rhdh-argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io  
+  labels:
+    argocd.argoproj.io/managed-by: argocd
 spec:
   project: default
   source:
