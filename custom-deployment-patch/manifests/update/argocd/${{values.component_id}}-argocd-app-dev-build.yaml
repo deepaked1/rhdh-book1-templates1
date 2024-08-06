@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: ${{values.component_id}}-dev-build
-  namespace: ${{parameters.namespace}}
+  namespace: rhdh-argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io  
 spec:
@@ -20,7 +20,7 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-    - CreateNamespace=true
+    - CreateNamespace=false
     - RespectIgnoreDifferences=true
     - ApplyOutOfSyncOnly=true    
     retry:

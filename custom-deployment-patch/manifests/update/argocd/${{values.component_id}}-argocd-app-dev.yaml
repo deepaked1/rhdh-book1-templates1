@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: ${{values.component_id}}-dev
-  namespace: ${{parameters.namespace}}
+  namespace: rhdh-argocd
   labels:
     argocd/app-name: ${{values.component_id}}-dev
   annotations:
@@ -37,7 +37,7 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-    - CreateNamespace=true
+    - CreateNamespace=false
     - RespectIgnoreDifferences=true
     - ApplyOutOfSyncOnly=true    
     retry:
