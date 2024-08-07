@@ -6,7 +6,7 @@ metadata:
   namespace: ${{values.namespace}}
   labels:
     argocd/app-name: ${{values.component_id}}-dev
-    argocd.argoproj.io/managed-by: rhdh
+    # argocd.argoproj.io/managed-by: rhdh
   annotations:
     argocd/app-name: ${{values.component_id}}-dev
   finalizers:
