@@ -150,7 +150,7 @@ spec:
       input:
         appName: ${{parameters.namespace}}-${{parameters.application_id}}-bootstrap
         argoInstance: argoInstance1
-        namespace: rhdh-argocd
+        namespace: ${{parameters.namespace}}
         repoUrl: https://gitlab.${{parameters.cluster_id}}/${{parameters.gitlabGroup}}/${{parameters.namespace}}-${{parameters.application_id}}-gitops.git
         path: 'argocd/'
   output:
@@ -158,8 +158,8 @@ spec:
       - title: Source Code Repository
         url: ${{steps.publishSource.output.remoteUrl}}
       - title: Pipeline status
-        url: https://console-openshift-console${{parameters.cluster_id}}/dev-pipelines/ns/${{parameters.namespace}}/
-      - title: Open Quarkus Service Component
+        url: https://console-openshift-console${{parameters.cluster_id}}/pipelines/ns/${{parameters.namespace}}/
+      - title: Open NestJS Service Component
         icon: catalog
         entityRef: ${{steps.registerSource1.output.entityRef}}
       - title: Open Angular Frontend Component
