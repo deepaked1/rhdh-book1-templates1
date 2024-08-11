@@ -152,7 +152,7 @@ spec:
       - title: Source Code Repository
         url: ${{steps.publishSource.output.remoteUrl}}
       - title: Pipeline status
-        url: https://console-openshift-console${{parameters.cluster_id}}/dev-pipelines/ns/${{parameters.namespace}}/
+        url: https://console-openshift-console${{parameters.cluster_id}}/pipelines/ns/${{parameters.namespace}}/
       - title: Open NestJS Service Component
         icon: catalog
         entityRef: ${{steps.registerSource.output.entityRef}}
