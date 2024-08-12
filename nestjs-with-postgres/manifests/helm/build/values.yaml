@@ -15,4 +15,4 @@ git:
 image:
   host: ${{values.image_host}}
   name: ${{values.image_name}}
-  tag: ${{values.image_tag}}
+  tag: ${{parameters.image_tag}}
