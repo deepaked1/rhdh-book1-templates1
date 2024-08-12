@@ -15,4 +15,5 @@ git:
 image:
   host: ${{values.image_host}}
   name: ${{values.image_name}}
-  tag: ${{parameters.image_tag}}
+  # tag: ${{parameters.image_tag}}
+  tag: 0.0.1

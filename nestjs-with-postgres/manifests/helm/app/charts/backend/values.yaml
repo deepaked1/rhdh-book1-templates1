@@ -19,7 +19,8 @@ image:
   repository: ${{values.image_host}}/${{values.image_name}}
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ${{parameters.image_tag}}
+  # tag: ${{values.image_tag}}
+  tag: 0.0.2
 
 imagePullSecrets: []
 nameOverride: ""
