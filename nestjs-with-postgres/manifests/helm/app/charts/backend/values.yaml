@@ -20,7 +20,7 @@ image:
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   # tag: ${{values.image_tag}}
-  tag: 0.0.2
+  tag: ${{values.image_tag}}
 
 imagePullSecrets: []
 nameOverride: ""

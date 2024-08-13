@@ -41,8 +41,8 @@ spec:
       optional: true
       mountPath: /kaniko/.docker
   results:
-    # - name: IMAGE_DIGEST
-    #   description: Digest of the image just built.
+    - name: IMAGE_DIGEST
+      description: Digest of the image just built.
     - name: IMAGE_URL
       description: URL of the image just built.
   steps:
@@ -54,7 +54,7 @@ spec:
         - --dockerfile=$(params.DOCKERFILE)
         - --context=$(workspaces.source.path)/$(params.CONTEXT) # The user does not need to care the workspace and the source.
         - --destination=$(params.IMAGE):$(params.TAG)
-        # - --digest-file=$(results.IMAGE_DIGEST.path)
+        - --digest-file=$(results.IMAGE_DIGEST.path)
       # kaniko assumes it is running as root, which means this example fails on platforms
       # that default to run containers as random uid (like OpenShift). Adding this securityContext
       # makes it explicit that it needs to run as root.
