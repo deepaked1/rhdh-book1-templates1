@@ -18,9 +18,6 @@ spec:
   params:
     - name: IMAGE
       description: Name (reference) of the image to build.
-    - name: TAG
-      description: Tag for the image to be built.
-      default: {{ .Values.image.tag }}
     - name: DOCKERFILE
       description: Path to the Dockerfile to build.
       default: ./Dockerfile
@@ -53,7 +50,7 @@ spec:
         - $(params.EXTRA_ARGS)
         - --dockerfile=$(params.DOCKERFILE)
         - --context=$(workspaces.source.path)/$(params.CONTEXT) # The user does not need to care the workspace and the source.
-        - --destination=$(params.IMAGE):$(params.TAG)
+        - --destination=$(params.IMAGE)
         - --digest-file=$(results.IMAGE_DIGEST.path)
       # kaniko assumes it is running as root, which means this example fails on platforms
       # that default to run containers as random uid (like OpenShift). Adding this securityContext
@@ -64,5 +61,5 @@ spec:
       image: registry.access.redhat.com/ubi8
       script: |
         set -e
-        image="$(params.IMAGE):$(params.TAG)"
+        image="$(params.IMAGE)"
         echo -n "${image}" | tee "$(results.IMAGE_URL.path)"
