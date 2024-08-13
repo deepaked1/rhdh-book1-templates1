@@ -11,7 +11,7 @@ metadata:
     - postgresql
     - book
 spec:
-  owner: rhdh-idp-book-authors
+  owner: deepaked1
   type: service
 
   parameters:

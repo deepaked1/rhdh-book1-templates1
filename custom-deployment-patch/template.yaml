@@ -10,7 +10,7 @@ metadata:
     - patch
     - book
 spec:
-  owner: rhdh-idp-book-authors
+  owner: deepaked1
   type: gitops-patch
 
   parameters:
