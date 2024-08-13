@@ -19,7 +19,7 @@ metadata:
     - book
     - example
   links:
-    - url: https://console-openshift-console${{values.cluster_id}}/pipelines/ns/${{values.namespace}}/
+    - url: https://console-openshift-console${{values.cluster_id}}/dev-pipelines/ns/${{values.namespace}}/
       title: Pipelines
       icon: web
     - url: https://console-openshift-console${{values.cluster_id}}/k8s/ns/${{values.namespace}}/apps~v1~Deployment/${{values.component_id}}
