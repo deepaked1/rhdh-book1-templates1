@@ -19,13 +19,13 @@ metadata:
     - book
     - example
   links:
-    - url: https://console-openshift-console${{values.cluster_id}}/dev-pipelines/ns/${{values.namespace}}/
+    - url: https://console-openshift-console.${{values.cluster_id}}/dev-pipelines/ns/${{values.namespace}}/
       title: Pipelines
       icon: web
-    - url: https://console-openshift-console${{values.cluster_id}}/k8s/ns/${{values.namespace}}/apps~v1~Deployment/${{values.component_id}}
+    - url: https://console-openshift-console.${{values.cluster_id}}/k8s/ns/${{values.namespace}}/apps~v1~Deployment/${{values.component_id}}
       title: Deployment
       icon: web
-    - url: https://devspaces${{values.cluster_id}}/#https://${{values.git_host}}/${{values.gitlabGroup}}/${{values.repoName}}?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+    - url: https://devspaces.${{values.cluster_id}}/#https://${{values.git_host}}/${{values.gitlabGroup}}/${{values.repoName}}?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
       title: OpenShift Dev Spaces
       icon: web
 spec:
@@ -52,7 +52,7 @@ metadata:
   name: ${{values.component_id}}-api
   description: API surface exposed by the Quarkus service
   links:
-    - url: https://${{values.component_id}}-${{values.namespace}}${{values.cluster_id}}/q/swagger-ui
+    - url: https://${{values.component_id}}-${{values.namespace}}.${{values.cluster_id}}/q/swagger-ui
       title: Swagger UI
       icon: web
     - url: https://${{values.git_host}}/${{values.gitlabGroup}}/${{values.repoName}}/-/blob/main/src/main/resources/META-INF/openapi.yaml

@@ -16,13 +16,13 @@ metadata:
     - book
     - example
   links:
-    - url: https://console-openshift-console${{values.cluster_id}}/dev-pipelines/ns/${{values.namespace}}/
+    - url: https://console-openshift-console.${{values.cluster_id}}/dev-pipelines/ns/${{values.namespace}}/
       title: Pipelines
       icon: web
-    - url: https://console-openshift-console${{values.cluster_id}}/k8s/ns/${{values.namespace}}/apps~v1~Deployment/${{values.component_id}}
+    - url: https://console-openshift-console.${{values.cluster_id}}/k8s/ns/${{values.namespace}}/apps~v1~Deployment/${{values.component_id}}
       title: Deployment
       icon: web
-    - url: https://devspaces${{values.cluster_id}}/#https://${{values.git_host}}/${{values.gitlabGroup}}/${{values.repoName}}?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+    - url: https://devspaces${{values..cluster_id}}/#https://${{values.git_host}}/${{values.gitlabGroup}}/${{values.repoName}}?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
       title: OpenShift Dev Spaces
       icon: web
 spec:
