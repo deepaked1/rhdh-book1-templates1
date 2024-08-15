@@ -1,0 +1,9 @@
+# kustomize/overlays/production/prod-config.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: ConfigMapGenerator
+metadata:
+  name: app-config
+behavior: merge
+literals:
+  - replicaCount=2
+  - environment=prod
