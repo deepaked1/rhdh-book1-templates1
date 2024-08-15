@@ -16,7 +16,7 @@ spec:
   source:
     repoURL: ${{values.destination}}
     targetRevision: HEAD
-    path: ./kustomize/overlays/prod
+    path: kustomize/overlays/prod
   destination:
     server: https://kubernetes.default.svc
     namespace: ${{values.namespace}}
