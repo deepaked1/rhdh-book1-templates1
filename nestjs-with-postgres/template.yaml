@@ -44,7 +44,7 @@ spec:
           description: Id of the cluster
           default: default
         namespace:
-          title: Namespace
+          title: Namespace1
           type: string
           description: Namespace
         application_id: 
