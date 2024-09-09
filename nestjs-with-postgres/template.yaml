@@ -47,6 +47,10 @@ spec:
           title: Namespace1
           type: string
           description: Namespace
+        dummy:
+          title: Dummy
+          type: string
+          description: Dummy
         application_id: 
           title: Application Id
           type: string
