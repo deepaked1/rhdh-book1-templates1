@@ -51,10 +51,7 @@ spec:
           title: Application Id
           type: string
           description: Id of the application
-        dummy:
-          title: Dummy
-          type: string
-          description: Dummy
+
         owner:
           title: Owner
           type: string
